@@ -4,12 +4,12 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
-import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -26,7 +26,7 @@ class DetailsActivity : ComponentActivity() {
   @OptIn(ExperimentalMaterial3Api::class)
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
-
+    enableEdgeToEdge()
     val image = intent.getIntExtra("image", R.drawable.ic_kotlin)
 
     setContent {
@@ -47,21 +47,22 @@ class DetailsActivity : ComponentActivity() {
                 Text(stringResource(R.string.app_name))
               }
             )
+          },
+          content = { innerPadding ->
+            Column(
+              modifier = Modifier.padding(innerPadding),
+            ) {
+              DetailsScreen(
+                image = image,
+                onAction = { resId ->
+                  val intent = Intent(this@DetailsActivity, ImageActivity::class.java)
+                  intent.putExtra("image", resId)
+                  startActivity(intent)
+                }
+              )
+            }
           }
-        ) { innerPadding ->
-          Column(
-            modifier = Modifier.padding(innerPadding),
-          ) {
-            DetailsScreen(
-              image = image,
-              onAction = { resId ->
-                val intent = Intent(this@DetailsActivity, ImageActivity::class.java)
-                intent.putExtra("image", resId)
-                startActivity(intent)
-              }
-            )
-          }
-        }
+        )
       }
     }
   }

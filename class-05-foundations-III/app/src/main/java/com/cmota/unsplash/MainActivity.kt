@@ -10,8 +10,12 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Add
 import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.FloatingActionButton
+import androidx.compose.material3.Icon
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -40,6 +44,16 @@ class MainActivity : ComponentActivity() {
                 Text(stringResource(R.string.app_name))
               }
             )
+          },
+          floatingActionButton = {
+            FloatingActionButton(
+              onClick = { Toast.makeText(this@MainActivity, "I ❤️Android", Toast.LENGTH_SHORT).show() }
+            ) {
+              Icon(
+                Icons.Default.Add,
+                contentDescription = "Add"
+              )
+            }
           }
         ) { innerPadding ->
           Column(

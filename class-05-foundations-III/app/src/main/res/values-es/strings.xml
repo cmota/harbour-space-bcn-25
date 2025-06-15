@@ -1,5 +1,8 @@
 <resources>
   <string name="app_name">Unsplash</string>
+
+  <string name="main_search_hint">Buscar...</string>
+
   <string name="about_info">Esta es una aplicación de demostración que utiliza Jetpack Compose con la API de Unsplash</string>
 
   <string name="info_camera">Cámara</string>
@@ -30,4 +33,6 @@
   <string name="info_likes_placeholder">1.8K</string>
 
   <string name="description_bcn_sagrada_familia">Vista desde la Sagrada Familia</string>
+  <string name="description_image">Esta es una imagen de un monumento de Barcelona</string>
+  <string name="description_search">Ícono de búsqueda</string>
 </resources>
