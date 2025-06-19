@@ -14,6 +14,8 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.text.KeyboardActions
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.Card
@@ -31,6 +33,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import coil3.compose.rememberAsyncImagePainter
@@ -41,13 +44,14 @@ import com.cmota.unsplash.data.UnsplashItem
 @Composable
 fun MainScreen(
   images: List<UnsplashItem>,
-  onAction: (Int) -> Unit
+  onAction: (Int) -> Unit,
+  onSearchAction: (String) -> Unit
 ) {
   LazyColumn(
     contentPadding = PaddingValues(16.dp)
   ) {
     item {
-      var search = rememberSaveable { mutableStateOf("") }
+      val search = rememberSaveable { mutableStateOf("") }
 
       OutlinedTextField(
         modifier = Modifier.fillMaxWidth(),
@@ -63,6 +67,12 @@ fun MainScreen(
         },
         label = {
           Text(stringResource(R.string.main_search_hint))
+        },
+        keyboardOptions = KeyboardOptions.Default.copy(
+          imeAction = ImeAction.Search
+        ),
+        keyboardActions = KeyboardActions {
+          onSearchAction(search.value)
         }
       )
     }

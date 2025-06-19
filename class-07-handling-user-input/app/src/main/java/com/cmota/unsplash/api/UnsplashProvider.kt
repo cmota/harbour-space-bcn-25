@@ -1,5 +1,6 @@
 package com.cmota.unsplash.api
 
+import com.cmota.unsplash.data.SearchResult
 import com.cmota.unsplash.data.UnsplashItem
 import com.cmota.unsplash.data.cb.UnsplashResult
 import com.squareup.moshi.Moshi
@@ -43,6 +44,30 @@ class UnsplashProvider {
       }
 
       override fun onFailure(call: Call<List<UnsplashItem>>, t: Throwable) {
+        cb.onDataFetchedFailed("Error: ${t.message}")
+      }
+    })
+  }
+
+  fun searchPhotos(keyword: String, cb: UnsplashResult) {
+    retrofit.searchPhotos(keyword).enqueue(object : Callback<SearchResult> {
+
+      override fun onResponse(
+        call: Call<SearchResult?>,
+        response: Response<SearchResult?>
+      ) {
+        val output = response.body()
+        if (response.isSuccessful && output != null) {
+          cb.onDataFetchedSuccess(output.results ?: emptyList())
+        } else {
+          cb.onDataFetchedFailed("${response.code()}: ${response.errorBody()}")
+        }
+      }
+
+      override fun onFailure(
+        call: Call<SearchResult?>,
+        t: Throwable
+      ) {
         cb.onDataFetchedFailed("Error: ${t.message}")
       }
     })

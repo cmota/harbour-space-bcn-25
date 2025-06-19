@@ -79,6 +79,9 @@ class MainActivity : ComponentActivity(), UnsplashResult {
                 val intent = Intent(this@MainActivity, DetailsActivity::class.java)
                 intent.putExtra("image", image)
                 startActivity(intent)
+              },
+              onSearchAction = { keyword ->
+                provider.searchPhotos(keyword, this@MainActivity)
               }
             )
           }
