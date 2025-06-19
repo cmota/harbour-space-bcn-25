@@ -1,4 +1,4 @@
-package com.cmota.unsplash.data
+package com.cmota.unsplash.data.collections
 
 data class ProfileImage(
     val large: String?,

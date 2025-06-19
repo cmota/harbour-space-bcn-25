@@ -1,5 +1,9 @@
-package com.cmota.unsplash.data
+package com.cmota.unsplash.data.images
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
 data class UnsplashItem(
     val blur_hash: String?,
     val color: String?,
@@ -15,4 +19,4 @@ data class UnsplashItem(
     val urls: Urls?,
     val user: User?,
     val width: Int?
-)
+) : Parcelable

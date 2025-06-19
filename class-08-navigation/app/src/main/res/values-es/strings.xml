@@ -2,6 +2,11 @@
   <string name="app_name">Unsplash</string>
 
   <string name="main_search_hint">Buscar...</string>
+  <string name="main_tab_images">Imágenes</string>
+  <string name="main_tab_collections">Colecciones</string>
+
+  <string name="bottom_tab_home">Inicio</string>
+  <string name="bottom_tab_about">Acerca de</string>
 
   <string name="about_info">Esta es una aplicación de demostración que utiliza Jetpack Compose con la API de Unsplash</string>
 

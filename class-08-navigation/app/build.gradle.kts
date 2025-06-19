@@ -2,6 +2,8 @@ plugins {
   alias(libs.plugins.android.application)
   alias(libs.plugins.kotlin.android)
   alias(libs.plugins.kotlin.compose)
+
+  id("kotlin-parcelize")
 }
 
 android {
@@ -50,9 +52,14 @@ dependencies {
   implementation(libs.retrofit)
   implementation(libs.converter.moshi)
   implementation(libs.moshi.kotlin)
+  implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
+
+  implementation("androidx.compose.runtime:runtime-livedata")
 
   implementation("io.coil-kt.coil3:coil-compose:3.2.0")
   implementation("io.coil-kt.coil3:coil-network-okhttp:3.2.0")
+
+  implementation("androidx.navigation:navigation-compose:2.9.0")
 
   testImplementation(libs.junit)
   androidTestImplementation(libs.androidx.junit)

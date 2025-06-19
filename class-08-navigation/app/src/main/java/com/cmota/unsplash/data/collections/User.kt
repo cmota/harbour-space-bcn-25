@@ -1,9 +1,8 @@
-package com.cmota.unsplash.data
+package com.cmota.unsplash.data.collections
 
 data class User(
     val bio: String?,
     val id: String?,
-    val instagram_username: String?,
     val links: LinksX?,
     val location: String?,
     val name: String?,
@@ -12,6 +11,5 @@ data class User(
     val total_collections: Int?,
     val total_likes: Int?,
     val total_photos: Int?,
-    val twitter_username: String?,
     val username: String?
 )
