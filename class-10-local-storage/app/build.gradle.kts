@@ -5,7 +5,6 @@ plugins {
 
   id("kotlin-parcelize")
   id("com.google.devtools.ksp")
-  id("com.google.gms.google-services")
 
   kotlin("plugin.serialization") version "2.0.21"
 }
@@ -70,9 +69,6 @@ dependencies {
   ksp("androidx.room:room-compiler:$roomVersion")
 
   implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.3")
-
-  implementation(platform("com.google.firebase:firebase-bom:33.15.0"))
-  implementation("com.google.firebase:firebase-auth-ktx")
 
   testImplementation(libs.junit)
   androidTestImplementation(libs.androidx.junit)
