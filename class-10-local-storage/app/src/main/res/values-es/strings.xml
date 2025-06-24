@@ -8,10 +8,6 @@
   <string name="bottom_tab_home">Inicio</string>
   <string name="bottom_tab_about">Acerca de</string>
 
-  <string name="login_username">Nombre de usuario</string>
-  <string name="login_password">Contraseña</string>
-  <string name="login_account">Iniciar sesión</string>
-
   <string name="about_dark_theme">Tema Oscuro</string>
   <string name="about_info">Esta es una aplicación de demostración que utiliza Jetpack Compose con la API de Unsplash</string>
 

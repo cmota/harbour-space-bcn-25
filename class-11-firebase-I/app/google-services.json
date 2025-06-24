@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "689376493851",
+    "project_id": "hs-bcn",
+    "storage_bucket": "hs-bcn.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:689376493851:android:d48cc813ea00b458ab93be",
+        "android_client_info": {
+          "package_name": "com.cmota.unsplash"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyABlF6YGq_eTYwMfTdHF63Bwjyfzt7UWKw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

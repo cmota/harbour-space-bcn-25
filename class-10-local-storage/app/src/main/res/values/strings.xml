@@ -8,10 +8,6 @@
   <string name="bottom_tab_home">Home</string>
   <string name="bottom_tab_about">About</string>
 
-  <string name="login_username">Username</string>
-  <string name="login_password">Password</string>
-  <string name="login_account">Login</string>
-
   <string name="about_dark_theme">Dark Theme</string>
   <string name="about_info">This is a showcase app using Jetpack Compose with the Unsplash API</string>
 
